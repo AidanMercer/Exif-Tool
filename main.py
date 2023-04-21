@@ -98,7 +98,10 @@ def main():
     print_logo()
     path = input("enter path to img file: \n")
     if os.path.exists(path):
-        get_exif_data(path)
+        try:
+            get_exif_data(path)
+        except:
+            print("no EXIF data found")
     else:
         print("invalid file")
 
